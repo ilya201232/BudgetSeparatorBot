@@ -54,7 +54,8 @@ public class Product extends BaseModel {
             joinColumns = @JoinColumn(name = "id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    // TODO - cascade!
+    // As stated here: https://stackoverflow.com/questions/4935095/jpa-hibernate-many-to-many-cascading
+    // When deleting a Product all related allocations will be removed too, but user won't be harmed.
     private List<User> allocatedUsers;
 
 }

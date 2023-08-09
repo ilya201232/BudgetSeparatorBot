@@ -42,7 +42,7 @@ public class Check extends BaseModel {
     /**
      * List of products this check has
      */
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "check")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "check", cascade = CascadeType.REMOVE)
     private List<Product> products;
 
 }

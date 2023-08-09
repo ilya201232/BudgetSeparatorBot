@@ -35,7 +35,8 @@ public class User extends BaseModel {
     /**
      * The group the user is in. Can be empty.
      */
-    // TODO - cascade!
+    // Тут нет каскада, т.к. при удалении пользователя группа не должна удаляться
+    // Удаляются только чеки, в которых фигурирует данный пользователь.
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id")
     private Group group;
